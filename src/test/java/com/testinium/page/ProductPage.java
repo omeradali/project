@@ -21,12 +21,16 @@ public class ProductPage {
         methods.scrollWithAction(By.cssSelector("#product-table > div:nth-child(7)"));
         methods.findElement(By.xpath(" (//*[@class='fa fa-heart'])[5]")).click();
         methods.waitBySeconds(1);
+        Assert.assertTrue(methods.isElementVisible(By.className("swal2-title ky-swal-title-single")));
         methods.findElement(By.xpath(" (//*[@class='fa fa-heart'])[6]")).click(); //sectiğim kitaplar fav'a atılacak.
         methods.waitBySeconds(1);
+        Assert.assertTrue(methods.isElementVisible(By.className("swal2-title ky-swal-title-single")));
         methods.findElement(By.xpath(" (//*[@class='fa fa-heart'])[7]")).click();
         methods.waitBySeconds(1);
+        Assert.assertTrue(methods.isElementVisible(By.className("swal2-title ky-swal-title-single")));
         methods.findElement(By.xpath(" (//*[@class='fa fa-heart'])[8]")).click();
         methods.waitBySeconds(1);
+        Assert.assertTrue(methods.isElementVisible(By.className("swal2-title ky-swal-title-single")));
         methods.click(By.cssSelector(".logo-text>a>img"));
         methods.waitBySeconds(2);
         methods.click(By.className("lvl1catalog"));
@@ -57,8 +61,54 @@ public class ProductPage {
         methods.waitBySeconds(2);
         methods.click(By.xpath("(//*[@class='fa fa-refresh green-icon'])[1]"));
         methods.waitBySeconds(2);
-        methods.click(By.className("button-red"));
+        methods.click(By.xpath("//*[@class='right']/a"));
+        methods.waitBySeconds(5);
+        methods.click(By.xpath("//*[@class='htabs alt']/a[2]"));
         methods.waitBySeconds(2);
+        methods.sendKeys(By.id("address-firstname-companyname"),"Omer");
+        methods.sendKeys(By.id("address-lastname-title"),"Adali");
+        methods.click(By.xpath("//*[@id='address-zone-id']"));
+        methods.click(By.xpath("//*[@id='address-zone-id']/option[3]"));
+        methods.click(By.xpath("//*[@id='address-county-id']"));
+        methods.waitBySeconds(2);
+        methods.click(By.xpath("//*[@id='address-county-id']/option[2]"));
+        methods.waitBySeconds(2);
+        methods.sendKeys(By.xpath("//*[@id='address-address-text']"),"Ankara");
+        methods.sendKeys(By.xpath("//*[@id='address-mobile-telephone']"),"5424170982");
+        methods.waitBySeconds(2);
+        methods.click(By.xpath("//*[@id='button-checkout-continue']"));
+        methods.waitBySeconds(2);
+        methods.click(By.xpath("//*[@id='button-checkout-continue']"));
+        methods.waitBySeconds(2);
+        methods.sendKeys(By.xpath("//*[@id='credit-card-owner']"),"Omerr adali");
+        methods.waitBySeconds(2);
+        methods.sendKeys(By.xpath("//*[@id='credit_card_number_1']"),"4522");
+        methods.waitBySeconds(1);
+        methods.sendKeys(By.xpath("//*[@id='credit_card_number_2']"),"5026");
+        methods.waitBySeconds(1);
+        methods.sendKeys(By.xpath("//*[@id='credit_card_number_3']"),"4031");
+        methods.waitBySeconds(1);
+        methods.sendKeys(By.xpath("//*[@id='credit_card_number_4']"),"2006");
+        methods.waitBySeconds(1);
+        methods.click(By.xpath("//*[@id='credit-card-expire-date-month']"));
+        methods.waitBySeconds(3);
+        methods.click(By.xpath("//*[@id='credit-card-expire-date-month']/option[4]"));
+        methods.waitBySeconds(3);
+        methods.sendKeys(By.xpath("//*[@id='credit-card-security-code']"),"345");
+        methods.waitBySeconds(2);
+        methods.click(By.xpath("//*[@id='credit-card-expire-date-year']"));
+        methods.waitBySeconds(3);
+        methods.click(By.xpath("//*[@id='credit-card-expire-date-year']/option[4]"));
+        methods.waitBySeconds(3);
+        methods.click(By.xpath("//*[@id='button-checkout-continue']"));
+        methods.waitBySeconds(5);
+        methods.click(By.className("checkout-logo"));
+        methods.waitBySeconds(4);
+        methods.hoverElement(By.className("menu top login"));
+        methods.waitBySeconds(3);
+        methods.click(By.xpath("//a[contains(@href, 'https://www.kitapyurdu.com/index.php?route=account/logout')]"));
+        methods.waitBySeconds(4);
+
 
 
 

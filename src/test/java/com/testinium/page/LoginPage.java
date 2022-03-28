@@ -1,6 +1,7 @@
 package com.testinium.page;
 
 import com.testinium.methods.Methods;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 public class LoginPage {
@@ -18,6 +19,7 @@ public class LoginPage {
         methods.waitBySeconds(1);
         methods.click(By.cssSelector(".ky-btn.ky-btn-orange.w-100.ky-login-btn"));
         methods.waitBySeconds(5);
+        Assert.assertTrue(methods.isElementVisible(By.cssSelector(".attention")));
     }
 
 
